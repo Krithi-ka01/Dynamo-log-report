@@ -1,0 +1,23 @@
+Skipping image OS validation for hb__fa70f858e36328c8de4b22c89773a5cc: docker inspect returned 1
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\meera\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "C:\Users\meera\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1025, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\meera\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1010, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "C:\Users\meera\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+    ...<2 lines>...
+    )
+  File "C:\Users\meera\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 631, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__kr4n6gb__env --project-directory D:\Dynamo\log-report\environment -f C:\Users\meera\AppData\Local\Temp\tmpz22cgp3y\log-report__KR4n6Gb__env-docker-compose-resources.json -f C:\Users\meera\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\meera\AppData\Local\Temp\tmph1t8jvn5\docker-compose-mounts.json cp main:/app/report.json jobs\2026-07-12__22-51-01\log-report__KR4n6Gb\artifacts\app\report.json. Return code: 1. Stdout:  log-report__kr4n6gb__env-main-1 Copying log-report__kr4n6gb__env-main-1:/app/report.json to jobs\2026-07-12__22-51-01\log-report__KR4n6Gb\artifacts\app\report.json
+Error response from daemon: Could not find the file /app/report.json in container c2b12c54a9af292d2a948f226500fa3b8181df94f51f232ac23f3a7f115757c2
+. Stderr: None. 
