@@ -9,10 +9,8 @@
  # echo 0 > /app/reward.txt
 #fi
 
+pytest /tests/test_outputs.py -rA --ctrf /logs/verifier/ctrf.json
 
-pytest /tests/test_outputs.py -rA
-
-  
 if [ $? -eq 0 ]; then
     echo 1 > /logs/verifier/reward.txt
 else
